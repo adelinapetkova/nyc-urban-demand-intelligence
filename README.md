@@ -11,6 +11,13 @@ Urban ride-hailing platforms operate in highly dynamic environments where demand
 The **NYC Urban Demand Intelligence Platform** is an end-to-end data science project designed to analyze historical ride data from New York City and build models that explain and predict demand patterns at a city-wide and zone-level scale. The platform combines exploratory data analysis, statistical inference, machine learning, Bayesian modeling, and deep learning to support data-driven operational decisions.
 
 ---
+## Domain Overview
+
+Ride-hailing demand represents the number of people requesting rides at different times and locations in the city. Demand varies by daily routines, population density, key facilities, and special events. Accurate demand predictions allow companies to allocate drivers efficiently, reduce wait times, and improve customer satisfaction.
+
+For this project, demand is defined as the number of completed rides per zone per hour. Key factors influencing demand include time of day, day of week, seasonality, neighborhood, weather, holidays, and special events. Using this information, the platform supports data-driven decisions for driver distribution and operational planning.
+
+---
 
 ## Project Goals
 
