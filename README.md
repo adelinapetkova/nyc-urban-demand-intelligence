@@ -32,12 +32,55 @@ The primary goals of this project are to:
 
 ---
 
+## Target Metrics
+
+The platform focuses on three core business metrics:
+
+- **Ride Demand**  
+  Number of completed rides per zone per hour.  
+  Proxy for customer demand and service load.
+
+- **Wait Time (proxy)**  
+  Time between ride request creation and vehicle arrival.  
+  Proxy for service efficiency and customer experience.  
+  (Derived from aggregate data in later phases.)
+
+- **Churn (proxy)**  
+  Rider disengagement inferred from declining zone-level demand patterns.  
+  Proxy for rider retention and platform health.  
+  (Modeled using aggregate trends due to lack of rider identifiers.)
+
+---
+
 ## Scope & Design Principles
 
 - **Domain focus:** Ride-hailing data (NYC taxi / ride-share trips)
 - **Geographic focus:** New York City
 - **Architecture:** Modular and extensible by design
 - **Future extension:** The platform is structured to allow integration of food delivery or other urban demand datasets with minimal changes
+
+---
+
+## Dataset
+
+This project uses publicly available **NYC Taxi & Limousine Commission (TLC)** trip data as a proxy for ride-hailing demand.
+
+- **Geography:** New York City  
+- **Granularity:** Individual completed trips  
+- **Proxy rationale:** Taxi rides are used to approximate Uber/Lyft–like demand
+
+**Initial dataset slice**
+
+- **Time range:** January-March 2019  
+- **Rationale:**
+  - Enables rapid iteration and pipeline validation  
+  - Reduces computational overhead  
+  - Will be extended later to capture seasonality and holidays  
+
+**Important note**
+
+This project uses pre-pandemic NYC taxi data to model stable urban mobility patterns.  
+The focus is on methodological rigor and interpretability rather than real-time deployment.
 
 ---
 
@@ -75,3 +118,20 @@ By the end of the project, the platform will provide:
 - Interactive dashboards for exploration and scenario analysis
 - Clear technical and business-oriented documentation
 
+---
+
+## Assumptions & Limitations
+
+**Assumptions**
+
+- Taxi trip data is a valid proxy for ride-hailing demand  
+- Historical demand patterns are reasonably stable  
+- Aggregate demand reflects customer behavior  
+- External factors (weather, events) can be added later  
+
+**Limitations**
+
+- No true wait-time data  
+- No rider-level identifiers  
+- No real-time streaming  
+- No production deployment 
