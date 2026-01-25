@@ -12,7 +12,7 @@ def load_raw_taxi_data(raw_data_dir=RAW_DATA_DIR):
     Returns concatenated pandas DataFrame containing all raw trip records.
     """
 
-    # Get .csv data files in the correct order aaaaa
+    # Get .csv data files in the correct order
     csv_files = sorted(
         f for f in os.listdir(raw_data_dir)
         if f.endswith(".csv")
